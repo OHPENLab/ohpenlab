@@ -28,94 +28,111 @@
   </div>
 </nav>
 
-<header class="hero">
-  <div class="container">
-    <h1>Optimization of Health ProcEsses and Networks <span>(OHPEN) Laboratory</span></h1>
-    <p class="tagline">
-      We build human-centered, multimodal, and agentic AI for healthcare delivery, and graph AI and
-      foundation models for drug safety, drug repurposing, and therapeutic discovery — at the
-      Department of Biomedical Informatics, Vanderbilt University Medical Center.
+<header class="hero-cinema">
+  <canvas id="net-canvas" aria-hidden="true"></canvas>
+  <div class="container hero-content">
+    <p class="hero-kicker fade-up d1">Vanderbilt University Medical Center · Biomedical Informatics</p>
+    <h1 class="fade-up d2">Mapping the networks<br>that make <span class="accent">healthcare</span> work.</h1>
+    <p class="hero-sub fade-up d3">
+      The OHPEN Lab builds human-centered, agentic AI for healthcare delivery — and graph AI for
+      drug safety and therapeutic discovery.
     </p>
-    <div class="hero-cta">
+    <div class="hero-cta fade-up d4">
       <a class="btn btn-primary" href="join.html">We're recruiting PhD students</a>
       <a class="btn btn-outline" href="projects.html">Explore our research</a>
     </div>
   </div>
+  <a class="scroll-hint" href="#about" aria-label="Scroll down">▼</a>
 </header>
 
-<section class="section">
+<section class="section" id="about">
   <div class="container">
-    <div class="banner">
-      <p>
-        <strong>🎉 Recognition:</strong> Lab director You Chen received the
-        <a href="https://news.vumc.org/2025/01/22/presidential-awards-recognize-early-career-researchers/" target="_blank" rel="noopener">
-        Presidential Early Career Award for Scientists and Engineers (PECASE, 2024)</a> — the highest honor
-        bestowed by the U.S. government on outstanding early-career scientists and engineers — and is a
-        Fellow of the American Medical Informatics Association (FAMIA, 2021).
-      </p>
-      <a class="btn btn-teal" href="news.html">More news</a>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <p class="kicker">About the lab</p>
-    <h2>Who we are</h2>
+    <p class="kicker">Who we are</p>
+    <h2>AI in service of patients</h2>
     <p class="lede">
-      OHPEN Lab is directed by
-      <a href="https://scholar.google.com/citations?user=c-pOkPEAAAAJ&amp;hl=en" target="_blank" rel="noopener"><strong>You Chen, PhD, FAMIA</strong></a>,
-      Tenured Associate Professor of Biomedical Informatics at Vanderbilt University Medical Center, with affiliated
-      appointments in Computer Science and in Electrical and Computer Engineering at Vanderbilt University.
-      We leverage large-scale, multimodal health data — electronic health records (EHRs), clinical notes, EHR audit
-      logs, genotypes, and wearables — together with multi-scale knowledge sources such as PubMed, FAERS, MAUDE,
-      DrugBank, and the OHDSI phenotype library. Our methods span large language models, AI agents, graph neural
-      networks, data mining, machine learning, temporal and network analysis, and advanced statistics, deployed on
-      cloud platforms including Databricks, Google Cloud, and Terra.
+      Directed by <a href="https://scholar.google.com/citations?user=c-pOkPEAAAAJ&amp;hl=en" target="_blank" rel="noopener"><strong>You Chen, PhD, FAMIA</strong></a>,
+      we turn large-scale, multimodal health data — EHRs, clinical notes, audit logs, genomics, and wearables —
+      into AI systems that are deployed against real clinical problems. Our active projects predict next-day
+      hospital discharge, close gaps in continuous obesity care, accelerate early Alzheimer's treatment with
+      EHR-integrated AI agents, and uncover dangerous drug-drug and drug-gene interactions.
     </p>
-    <div class="grid cols-2">
-      <div class="card">
-        <p class="meta">Pillar 1</p>
-        <h3>Human-centered, multimodal &amp; agentic AI for healthcare delivery</h3>
-        <p>Optimizing clinical pathways and care coordination, monitoring digital information flow, modeling
-        teamwork from EHR audit logs, predicting patient trajectories such as next-day discharge, and addressing
-        disparities in healthcare processes and outcomes.</p>
-      </div>
-      <div class="card">
-        <p class="meta">Pillar 2</p>
-        <h3>Graph AI &amp; foundation models for drug safety and therapeutic discovery</h3>
-        <p>Discovering and mitigating adverse drug-drug and drug-gene interactions, knowledge-graph foundation
-        models for drug indication prediction and repurposing, and pharmacogenetics powered by biobank-scale
-        real-world data.</p>
-      </div>
+    <div class="chips">
+      <a class="chip" href="projects.html"><span class="src">NIH R01</span>DischargeWatch — next-day discharge prediction</a>
+      <a class="chip" href="projects.html"><span class="src">Eli Lilly</span>Human-AI continuous obesity care</a>
+      <a class="chip" href="projects.html"><span class="src">Eli Lilly</span>R2FI — Alzheimer's triage agents</a>
+      <a class="chip" href="projects.html"><span class="src">NIH R01</span>Drug interactions &amp; pharmacogenetics</a>
     </div>
   </div>
 </section>
 
 <section class="section soft">
   <div class="container">
-    <p class="kicker">At a glance</p>
-    <h2>Lab highlights</h2>
-    <div class="stats" style="margin-top:22px">
-      <div class="stat"><div class="num">$8.2M</div><div class="lbl">active project funding as PI/MPI</div></div>
-      <div class="stat"><div class="num">100+</div><div class="lbl">peer-reviewed publications</div></div>
-      <div class="stat"><div class="num">4,200+</div><div class="lbl">citations · h-index 31</div></div>
-      <div class="stat"><div class="num">~30</div><div class="lbl">trainees mentored</div></div>
+    <p class="kicker">Two pillars</p>
+    <h2>What drives the lab</h2>
+    <div class="grid cols-2" style="margin-top:24px">
+      <div class="pillar">
+        <img src="assets/img/art_care_network.svg" alt="Abstract clinical pathway network illustration">
+        <div class="pillar-body">
+          <h3>Human-centered &amp; agentic AI for healthcare delivery</h3>
+          <p>Clinical pathways, care-team networks, and patient trajectories — learned from the digital footprints
+          of care and returned to clinicians as decision support.</p>
+        </div>
+      </div>
+      <div class="pillar">
+        <img src="assets/img/art_graph_drug.svg" alt="Abstract drug-gene knowledge graph illustration">
+        <div class="pillar-body">
+          <h3>Graph AI &amp; foundation models for drug safety and discovery</h3>
+          <p>Knowledge graphs and graph neural networks that predict adverse drug interactions and surface new
+          therapeutic candidates from biobank-scale data.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <p class="kicker">Research interests</p>
-    <h2>What we work on</h2>
-    <div class="grid cols-3" style="margin-top:22px">
-      <div class="card"><h3>Optimizing clinical pathways</h3><p>Measuring and refining clinical pathways to enhance patient care journeys, optimize resource allocation, and improve outcomes.</p></div>
-      <div class="card"><h3>Digital information flow</h3><p>Monitoring and analyzing information flow in modern care coordination to make digital health technology safer and more efficient.</p></div>
-      <div class="card"><h3>Teamwork in patient care</h3><p>Analyzing healthcare-professional interaction networks learned from EHR audit logs to boost the efficiency of collaborative care.</p></div>
-      <div class="card"><h3>Adverse drug-drug interactions</h3><p>Discovering and mitigating adverse drug-drug interactions, incorporating human genotype data for pharmacogenetic insight.</p></div>
-      <div class="card"><h3>Drug repurposing &amp; discovery</h3><p>Knowledge graphs, graph neural networks, and foundation models to identify therapeutic candidates and predict drug indications.</p></div>
-      <div class="card"><h3>Equity in healthcare processes</h3><p>Quantifying and addressing racial and socioeconomic disparities in healthcare processes, AI performance, and patient outcomes.</p></div>
+    <p class="kicker">How we work</p>
+    <h2>From data to impact</h2>
+    <div class="workflow-fig">
+      <img src="assets/img/workflow.svg" alt="Workflow: multimodal health data feeds AI models and agents, producing better care delivery and safer therapeutics">
+    </div>
+  </div>
+</section>
+
+<section class="award-band">
+  <div class="container">
+    <div class="award-flex">
+      <div class="award-medal">
+        <svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gold medal">
+          <defs>
+            <linearGradient id="ribbon" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#0e8f8a"/><stop offset="1" stop-color="#0a6d69"/>
+            </linearGradient>
+            <radialGradient id="coin" cx="0.5" cy="0.4" r="0.7">
+              <stop offset="0" stop-color="#ffe3a3"/><stop offset="0.7" stop-color="#d9a441"/><stop offset="1" stop-color="#a87b26"/>
+            </radialGradient>
+          </defs>
+          <path d="M78 0 L100 74 L122 0 L152 0 L114 96 L86 96 L48 0 Z" fill="url(#ribbon)"/>
+          <circle cx="100" cy="146" r="62" fill="url(#coin)"/>
+          <circle cx="100" cy="146" r="50" fill="none" stroke="#8a6620" stroke-width="2" stroke-opacity="0.6"/>
+          <path d="M100 116 l9.6 19.5 21.5 3.1 -15.6 15.2 3.7 21.4 -19.2 -10.1 -19.2 10.1 3.7 -21.4 -15.6 -15.2 21.5 -3.1 Z" fill="#fff6e0"/>
+          <path d="M46 170 q-18 24 0 44 M154 170 q18 24 0 44" fill="none" stroke="#ffd98a" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="award-copy">
+        <p class="k">Recognition</p>
+        <h2>Presidential Early Career Award for Scientists and Engineers</h2>
+        <p>The highest honor bestowed by the U.S. government on outstanding early-career scientists and engineers,
+        awarded to lab director You Chen in 2024.
+        <a href="https://news.vumc.org/2025/01/22/presidential-awards-recognize-early-career-researchers/" target="_blank" rel="noopener" style="color:#9fd6d3">Read the story →</a></p>
+        <div class="honor-pills">
+          <span class="honor-pill">🎖️ Fellow of AMIA, 2021</span>
+          <span class="honor-pill">📄 100+ publications · 4,200+ citations</span>
+          <span class="honor-pill">💰 $8.2M active funding as PI/MPI</span>
+          <span class="honor-pill">🏆 DBMI Outstanding Researcher, 2022</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -128,9 +145,8 @@
       <img class="icon" src="assets/img/carecontinuum_icon.jpg" alt="CareContinuum app icon">
       <div class="intro">
         <p class="lede" style="margin-bottom:14px">
-          CareContinuum helps patients stay on top of obesity and weight-management care in one place — tracking
-          health metrics, medications, appointments, and documents, with AI-supported insights that surface
-          barriers and practical next steps. Developed as part of our human-AI collaborative obesity-care research.
+          Obesity and weight-management care in one place — tracking, organization, and AI-supported insights,
+          born from our human-AI obesity-care research.
         </p>
         <div class="badges">
           <a class="btn btn-teal" href="https://apps.apple.com/us/app/carecontinuum/id6758462826" target="_blank" rel="noopener">Download on the App Store</a>
@@ -147,11 +163,8 @@
     <p class="kicker">Teaching</p>
     <h2>Network Analysis and Graph AI in Healthcare</h2>
     <p class="lede">
-      Dr. Chen teaches <strong>Network Analysis and Graph AI in Healthcare</strong> (BMIF 7391 / CS 5891 /
-      CS 3891) at Vanderbilt University, offered every fall since 2021. The course takes students from the
-      historical foundations of network analysis to the current frontier of graph AI — node embeddings, graph
-      neural networks, graph transformers, knowledge graphs with Graph RAG, and biomedical foundation models —
-      grounded in real healthcare applications.
+      Every fall at Vanderbilt (BMIF 7391 / CS 5891 / CS 3891) — from the foundations of network analysis to
+      graph neural networks, Graph RAG, and biomedical foundation models.
     </p>
     <p>
       <a href="assets/docs/Syllabus_2026_FALL.pdf" target="_blank" rel="noopener">Syllabus (Fall 2026)</a> ·
@@ -187,6 +200,64 @@
     <p class="fineprint">© OHPEN Lab, Vanderbilt University Medical Center. Optimization of Health ProcEsses and Networks Laboratory.</p>
   </div>
 </footer>
+
+<script>
+(function () {
+  var canvas = document.getElementById('net-canvas');
+  if (!canvas || !canvas.getContext) return;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var ctx = canvas.getContext('2d');
+  var nodes = [], W, H, dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+  function resize() {
+    var r = canvas.parentElement.getBoundingClientRect();
+    W = r.width; H = r.height;
+    canvas.width = W * dpr; canvas.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var count = Math.max(34, Math.min(80, Math.round(W * H / 22000)));
+    nodes = [];
+    for (var i = 0; i < count; i++) {
+      nodes.push({
+        x: Math.random() * W, y: Math.random() * H,
+        vx: (Math.random() - 0.5) * 0.35, vy: (Math.random() - 0.5) * 0.35,
+        r: 1.2 + Math.random() * 2.2,
+        gold: Math.random() < 0.16
+      });
+    }
+  }
+
+  function step() {
+    ctx.clearRect(0, 0, W, H);
+    var link = 130;
+    for (var i = 0; i < nodes.length; i++) {
+      var a = nodes[i];
+      if (!reduce) {
+        a.x += a.vx; a.y += a.vy;
+        if (a.x < -10) a.x = W + 10; if (a.x > W + 10) a.x = -10;
+        if (a.y < -10) a.y = H + 10; if (a.y > H + 10) a.y = -10;
+      }
+      for (var j = i + 1; j < nodes.length; j++) {
+        var b = nodes[j], dx = a.x - b.x, dy = a.y - b.y, d = Math.sqrt(dx * dx + dy * dy);
+        if (d < link) {
+          ctx.strokeStyle = 'rgba(111,216,210,' + (0.22 * (1 - d / link)).toFixed(3) + ')';
+          ctx.lineWidth = 1;
+          ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+        }
+      }
+    }
+    for (var k = 0; k < nodes.length; k++) {
+      var n = nodes[k];
+      ctx.fillStyle = n.gold ? 'rgba(255,217,138,0.9)' : 'rgba(111,216,210,0.75)';
+      ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2); ctx.fill();
+    }
+    if (!reduce) requestAnimationFrame(step);
+  }
+
+  resize();
+  window.addEventListener('resize', resize);
+  step();
+})();
+</script>
 
 </body>
 </html>

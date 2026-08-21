@@ -41,17 +41,21 @@ a:hover { text-decoration: underline; }
   border-bottom: 3px solid var(--teal);
 }
 .nav-inner {
-  max-width: 1100px; margin: 0 auto; padding: 0 24px;
+  max-width: 1160px; margin: 0 auto; padding: 0 24px;
   display: flex; align-items: center; justify-content: space-between;
-  min-height: 62px; flex-wrap: wrap;
+  min-height: 58px; flex-wrap: nowrap; gap: 16px;
 }
-.brand { display: flex; align-items: center; gap: 10px; padding: 8px 0; }
-.brand a { color: #fff; font-weight: 700; font-size: 1.15rem; letter-spacing: 0.4px; text-decoration: none; }
+.brand { display: flex; align-items: center; gap: 10px; padding: 8px 0; flex: 0 0 auto; }
+.brand a { color: #fff; font-weight: 700; font-size: 1.08rem; letter-spacing: 0.4px; text-decoration: none; white-space: nowrap; }
 .brand .dot { color: var(--gold); }
-.nav-links { display: flex; flex-wrap: wrap; gap: 2px; list-style: none; }
+.nav-links {
+  display: flex; flex-wrap: nowrap; gap: 2px; list-style: none;
+  overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+}
+.nav-links::-webkit-scrollbar { display: none; }
 .nav-links a {
-  display: block; padding: 10px 13px; color: #d7e2ec; font-size: 0.93rem;
-  font-weight: 500; border-radius: 8px; text-decoration: none;
+  display: block; padding: 9px 11px; color: #d7e2ec; font-size: 0.88rem;
+  font-weight: 500; border-radius: 8px; text-decoration: none; white-space: nowrap;
 }
 .nav-links a:hover { color: #fff; background: rgba(255,255,255,0.10); }
 .nav-links a.active { color: #fff; background: var(--teal); }
@@ -212,6 +216,97 @@ a:hover { text-decoration: underline; }
 }
 .app-hero .intro { flex: 1; min-width: 280px; }
 .badges { display: flex; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+
+/* ---------- Cinematic hero (home) ---------- */
+.hero-cinema {
+  position: relative; min-height: 90vh; display: flex; align-items: center;
+  overflow: hidden; color: #fff;
+  background:
+    radial-gradient(1200px 600px at 80% 10%, rgba(14,143,138,0.28), transparent 60%),
+    radial-gradient(900px 500px at 10% 90%, rgba(217,164,65,0.14), transparent 60%),
+    linear-gradient(160deg, #081627 0%, #0f2a43 55%, #123a52 100%);
+}
+#net-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.hero-cinema::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to bottom, transparent 60%, rgba(8,22,39,0.85) 100%);
+}
+.hero-content { position: relative; z-index: 2; padding-top: 90px; padding-bottom: 110px; }
+.hero-kicker {
+  text-transform: uppercase; letter-spacing: 4px; font-size: 0.8rem;
+  font-weight: 700; color: var(--gold); margin-bottom: 18px;
+}
+.hero-cinema h1 {
+  font-size: clamp(2.3rem, 5.5vw, 4rem); line-height: 1.08; font-weight: 800;
+  max-width: 900px; letter-spacing: -0.5px;
+}
+.hero-cinema h1 .accent { color: #6fd8d2; }
+.hero-sub {
+  margin-top: 22px; font-size: clamp(1rem, 1.8vw, 1.2rem); color: #c6d8e4;
+  max-width: 640px; line-height: 1.7;
+}
+.hero-cta { margin-top: 34px; display: flex; gap: 14px; flex-wrap: wrap; }
+.fade-up { opacity: 0; transform: translateY(24px); animation: fadeUp 0.9s ease forwards; }
+.d1 { animation-delay: 0.15s; } .d2 { animation-delay: 0.45s; }
+.d3 { animation-delay: 0.75s; } .d4 { animation-delay: 1.05s; }
+@keyframes fadeUp { to { opacity: 1; transform: none; } }
+.scroll-hint {
+  position: absolute; left: 50%; bottom: 26px; transform: translateX(-50%);
+  z-index: 2; color: #9fd6d3; font-size: 1.4rem; animation: bob 2s ease-in-out infinite;
+  text-decoration: none;
+}
+.scroll-hint:hover { text-decoration: none; color: #fff; }
+@keyframes bob { 0%,100% { transform: translate(-50%,0); } 50% { transform: translate(-50%,10px); } }
+@media (prefers-reduced-motion: reduce) {
+  .fade-up { animation: none; opacity: 1; transform: none; }
+  .scroll-hint { animation: none; }
+}
+
+/* ---------- Pillar art cards ---------- */
+.pillar {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  overflow: hidden; box-shadow: 0 2px 10px rgba(15,42,67,0.06);
+  display: flex; flex-direction: column;
+}
+.pillar img { width: 100%; height: 210px; object-fit: cover; display: block; }
+.pillar .pillar-body { padding: 22px 24px 26px; }
+.pillar h3 { color: var(--navy); font-size: 1.12rem; margin-bottom: 8px; line-height: 1.4; }
+.pillar p { color: var(--muted); font-size: 0.93rem; }
+
+/* ---------- Project chips ---------- */
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip {
+  display: inline-block; padding: 9px 18px; border-radius: 999px;
+  background: #fff; border: 1.5px solid var(--line); color: var(--navy);
+  font-weight: 600; font-size: 0.86rem; text-decoration: none;
+  transition: border-color .15s, box-shadow .15s, transform .15s;
+}
+.chip:hover { text-decoration: none; border-color: var(--teal); box-shadow: 0 4px 14px rgba(14,143,138,0.18); transform: translateY(-1px); }
+.chip .src { color: var(--teal-dark); font-weight: 700; margin-right: 6px; }
+
+/* ---------- Award band ---------- */
+.award-band {
+  position: relative; overflow: hidden; color: #fff; padding: 70px 0;
+  background:
+    radial-gradient(700px 400px at 85% 20%, rgba(217,164,65,0.20), transparent 60%),
+    linear-gradient(140deg, #0b1f33 0%, #14395c 70%, #17546b 100%);
+}
+.award-flex { display: flex; align-items: center; gap: 44px; flex-wrap: wrap; }
+.award-medal { flex: 0 0 190px; }
+.award-medal svg { width: 190px; height: auto; filter: drop-shadow(0 10px 24px rgba(0,0,0,0.35)); }
+.award-copy { flex: 1; min-width: 280px; }
+.award-copy .k { text-transform: uppercase; letter-spacing: 3px; font-size: 0.76rem; font-weight: 700; color: #9fd6d3; }
+.award-copy h2 { color: var(--gold); font-size: clamp(1.5rem, 3vw, 2.1rem); line-height: 1.25; margin: 10px 0 12px; }
+.award-copy p { color: #c6d8e4; max-width: 620px; }
+.honor-pills { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+.honor-pill {
+  padding: 8px 16px; border-radius: 999px; font-size: 0.82rem; font-weight: 600;
+  background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.22); color: #eaf2f7;
+}
+
+/* ---------- Workflow figure ---------- */
+.workflow-fig { margin-top: 26px; }
+.workflow-fig img { width: 100%; height: auto; border-radius: var(--radius); box-shadow: 0 4px 18px rgba(15,42,67,0.10); }
 
 /* ---------- Footer ---------- */
 footer {

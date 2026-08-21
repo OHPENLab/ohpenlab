@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-label="Abstract clinical pathway network">
+  <defs>
+    <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a1e33"/>
+      <stop offset="0.6" stop-color="#0f2a43"/>
+      <stop offset="1" stop-color="#14536b"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6fd8d2" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#6fd8d2" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowG" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffd98a" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#ffd98a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="420" fill="url(#bg1)"/>
+
+  <!-- faint grid -->
+  <g stroke="#ffffff" stroke-opacity="0.04">
+    <path d="M0 70 H800 M0 140 H800 M0 210 H800 M0 280 H800 M0 350 H800"/>
+    <path d="M100 0 V420 M200 0 V420 M300 0 V420 M400 0 V420 M500 0 V420 M600 0 V420 M700 0 V420"/>
+  </g>
+
+  <!-- patient journey path -->
+  <path d="M40 330 C 160 300, 190 180, 300 190 S 470 280, 560 230 S 700 90, 770 100"
+        fill="none" stroke="#0e8f8a" stroke-width="3" stroke-opacity="0.85" stroke-linecap="round"/>
+  <path d="M40 330 C 160 300, 190 180, 300 190 S 470 280, 560 230 S 700 90, 770 100"
+        fill="none" stroke="#6fd8d2" stroke-width="8" stroke-opacity="0.12" stroke-linecap="round"/>
+
+  <!-- branch paths -->
+  <path d="M300 190 C 340 120, 420 100, 500 110" fill="none" stroke="#d9a441" stroke-width="2" stroke-opacity="0.7" stroke-dasharray="1 8" stroke-linecap="round"/>
+  <path d="M560 230 C 590 300, 660 320, 730 300" fill="none" stroke="#6fd8d2" stroke-width="2" stroke-opacity="0.5" stroke-dasharray="1 8" stroke-linecap="round"/>
+
+  <!-- ECG pulse along the path -->
+  <path d="M330 260 h40 l10 -26 l14 52 l12 -40 l8 14 h44" fill="none" stroke="#6fd8d2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.95"/>
+
+  <!-- glowing journey nodes -->
+  <g>
+    <circle cx="40" cy="330" r="34" fill="url(#glow1)"/><circle cx="40" cy="330" r="9" fill="#6fd8d2"/>
+    <circle cx="300" cy="190" r="40" fill="url(#glowG)"/><circle cx="300" cy="190" r="11" fill="#ffd98a"/>
+    <circle cx="560" cy="230" r="34" fill="url(#glow1)"/><circle cx="560" cy="230" r="9" fill="#6fd8d2"/>
+    <circle cx="770" cy="100" r="40" fill="url(#glowG)"/><circle cx="770" cy="100" r="11" fill="#ffd98a"/>
+    <circle cx="500" cy="110" r="24" fill="url(#glow1)"/><circle cx="500" cy="110" r="6.5" fill="#6fd8d2"/>
+    <circle cx="730" cy="300" r="24" fill="url(#glow1)"/><circle cx="730" cy="300" r="6.5" fill="#6fd8d2"/>
+  </g>
+
+  <!-- care team constellation -->
+  <g stroke="#8fb8c9" stroke-opacity="0.5" stroke-width="1.4">
+    <path d="M120 110 L190 80 M190 80 L250 130 M120 110 L250 130 M190 80 L160 40"/>
+  </g>
+  <g fill="#cfe6ec">
+    <circle cx="120" cy="110" r="5"/><circle cx="190" cy="80" r="7"/>
+    <circle cx="250" cy="130" r="5"/><circle cx="160" cy="40" r="4"/>
+  </g>
+
+  <!-- medical cross -->
+  <g transform="translate(660,180)" fill="#ffd98a" fill-opacity="0.9">
+    <rect x="-5" y="-16" width="10" height="32" rx="2"/>
+    <rect x="-16" y="-5" width="32" height="10" rx="2"/>
+  </g>
+
+  <!-- scattered dots -->
+  <g fill="#6fd8d2" fill-opacity="0.5">
+    <circle cx="90" cy="230" r="3"/><circle cx="420" cy="60" r="3"/><circle cx="620" cy="60" r="2.5"/>
+    <circle cx="360" cy="360" r="3"/><circle cx="210" cy="330" r="2.5"/><circle cx="700" cy="380" r="2.5"/>
+  </g>
+</svg>
